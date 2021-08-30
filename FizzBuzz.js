@@ -3,7 +3,7 @@ function isDivisable(n, m){
 }
 
 function printNumbers(){
-    for (i = 1; i <= 200; i++){
+    for (i = 500; i <= 512; i++){
         let print = "";
         if (isDivisable(i, 3)){
             print += "Fizz"
@@ -27,6 +27,10 @@ function printNumbers(){
                 print = printArr.join('');
             }
             else print = 'Fezz'
+        }
+        if (isDivisable(i, 17) && print.length > 4){
+                const arr = [...print.matchAll(/.{4}/g)].reverse()
+                print = arr.join('')
         }
         else if (print === "")   {
             print = i;
