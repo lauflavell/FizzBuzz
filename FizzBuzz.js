@@ -1,9 +1,17 @@
+const fetch = require('node-fetch');
+const readline = require('readline-sync');
+
+function promptUser(promptStrg){
+    console.log(`\n ${promptStrg}`);
+    return readline.prompt();
+}
+
 function isDivisable(n, m){
     return n % m == 0;
 }
 
 function printNumbers(){
-    for (i = 500; i <= 512; i++){
+    for (i = 1; i <= `${maxNum}`; i++){
         let print = "";
         if (isDivisable(i, 3)){
             print += "Fizz"
@@ -39,4 +47,5 @@ function printNumbers(){
     }
     
 }
+const maxNum = promptUser('Enter maximum number to print:')
 printNumbers();
